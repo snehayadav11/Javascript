@@ -3,7 +3,7 @@
 
 1. console.log(typeof null)
 
-2. console.log(typeof (null))
+2. console.log(typeof (null))  also known as method function
 
 */
 
