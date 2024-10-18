@@ -45,10 +45,10 @@ undefined --> Nan
 
 // OUTPUT = FALSE
 
-let isLoggedIn = "Sneha"
+// let isLoggedIn = "Sneha"
 
- let booleanIsLoggedIn = Boolean(isLoggedIn)
- console.log(booleanIsLoggedIn) 
+//  let booleanIsLoggedIn = Boolean(isLoggedIn)
+//  console.log(booleanIsLoggedIn) 
 
 // OUTPUT = TRUE
 
@@ -58,6 +58,29 @@ let isLoggedIn = "Sneha"
 ""=> false , "sneha"=> true
 
 */
+
+// similary can also convert number to a string and boolean or with many other datatypes
+
+/*⭐ opertions that u are already aware with ⭐  
+
+console.log(2 + 2)
+console.log(2 - 2)
+console.log(2 / 2)
+console.log(2 % 2)
+console.log(2 ** 2)  //  2 raise to power 2
+
+*/ 
+
+//⭐ opertions that u are already aware with ⭐  
+
+console.log(1 +'2')        // 12
+console.log('1' + 2)       // 12
+console.log("2" + 2 + 2)   // 222  since first is strinj therfore all the after char will also be treated as strinj
+console.log(2 + 2 + '1')   // 41 
+
+// prefix and postfix to read from MDN Docs
+
+
 
 
 
