@@ -8,13 +8,13 @@
 */
 
 let score = "22abc"   
-//console.log(typeof score)
+console.log(typeof score)  // o/p string
 
 //score = "22"
-//console.log(typeof score)
+//console.log(typeof score) 
 
 let valueInNumber = Number(score)
-//console.log(typeof valueInNumber)
+console.log(typeof valueInNumber)  // o/p  Mumber
 
 //score = "22abc"
 //console.log(typeof valueInNumber)
@@ -71,12 +71,12 @@ console.log(2 ** 2)  //  2 raise to power 2
 
 */ 
 
-//⭐ opertions that u are already aware with ⭐  
+//⭐ opertions that u need to aware with ⭐  
 
-console.log(1 +'2')        // 12
-console.log('1' + 2)       // 12
-console.log("2" + 2 + 2)   // 222  since first is strinj therfore all the after char will also be treated as strinj
-console.log(2 + 2 + '1')   // 41 
+// console.log(1 +'2')        // 12
+// console.log('1' + 2)       // 12
+// console.log("2" + 2 + 2)   // 222  since first is strinj therfore all the after char will also be treated as strinj
+// console.log(2 + 2 + '1')   // 41 
 
 // prefix and postfix to read from MDN Docs
 
