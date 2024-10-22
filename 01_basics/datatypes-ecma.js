@@ -1,10 +1,21 @@
 // ⭐ "use strict"; // treats all js code as a newer version
 
-//  ⭐ alert("hello") // will not pop up as we are using node not browser
+//  ⭐ alert("hello") // will not pop up as we are using node.js not browser 
+
+/*
+
+➡️➡️➡️ alert("hello  there") ⬇️⬇️⬇️
+
+In Node.js, the alert function is not defined 
+because it's a part of the browser's Window interface. 
+The alert function is used in web browsers to display a dialog box with a specified message and an OK button,
+but Node.js runs in a server-side environment, which does not have a graphical user interface (GUI) or a windowing system.
+
+*/
 
 console.log(3 
     + 3
-)            // code readability should be maintained 
+)            // code readability should be maintained  
 
 // tc39.es is the website for documentation and u are aware of mdn docs
 
