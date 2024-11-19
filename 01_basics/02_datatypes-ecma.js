@@ -17,7 +17,7 @@ console.log(3
     + 3
 )            // code readability should be maintained  
 
-// tc39.es is the website for documentation and u are aware of mdn docs
+// tc39.es is the website for documentation and u are already aware of mdn docs
 
 /* ⭐ datatypes ⭐
 
