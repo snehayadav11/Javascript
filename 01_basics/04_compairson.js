@@ -20,7 +20,7 @@ console.log( 3 != 2)
 
 // sometimes unpredictable output can be displayed when u compare two different datatypess
 
-/* 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
+/* 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
 
 comparison operator in javascript actually converts null into  a number and treating it as 0
 therefore
