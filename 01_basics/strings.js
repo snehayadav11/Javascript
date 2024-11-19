@@ -29,7 +29,7 @@ console.log(`My name is ${firstName} ${secondName}`);
 let name = 'crazy';
 console.log(name.replace('crazy','cute'));
 
-// strings functions or say methods are really imp so do read mdn docs
+//for all strings functions or say methods are really imp so do read mdn docs
 
 
 
