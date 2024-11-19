@@ -8,7 +8,7 @@
 */
 
 let score = "22abc"   
-console.log(typeof score)  // o/p string
+console.log(typeof score)  // o / p string
 
 //score = "22"
 //console.log(typeof score) 
