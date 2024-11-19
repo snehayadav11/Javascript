@@ -68,3 +68,13 @@ value = "Hello";     // value is now a string
   ✅✅✅
 
   */
+
+
+  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  /* HERE WE GONNA DISCUSS ABOUT STACK AND HEAP MEMORY ALLOCATION 
+
+  JUST REMEMBER JITNE B PRIMITIVE DATATYPES ( STACK ) IS USED AND FOR REFERENCE OR NON PRIMITIVE WE USED ( HEAP ) MEMORY 
+
+   🚨🚨 STACK OR IN PRIMITIVE ANY CHANGES ARE MADE IN A COPY OF THE DATA WHILE IN NON PRIMITIVE OT REFERENCE TYPE CHANGES 
+  OCCUR IN THE OG DATA 🚨🚨
