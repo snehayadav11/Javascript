@@ -56,4 +56,58 @@ function userLoggedIn(username = "Sneh"){
     }
     return `${username} just logged in`;
 }
-console.log(userLoggedIn()); // Sneh just logged in 
+//console.log(userLoggedIn()); // Sneh just logged in 
+
+//🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
+
+// SOMETIMES THERE ARE SCENARIO WHERE YOU DONT KNOW HOW MANY PARAMETER WILL BE PASSED IN THAT CASE HOW ITS DONE LETS SEE
+
+// TO UNDERSTAND THAT LETS TAKE AN EXAMPLE OF SHOPPING CART PRICE
+
+// function calculateCartPrice(num1){ // in this case u cant just keep a fixed no of parameters 
+//     return num1
+// }
+// console.log(calculateCartPrice(200 , 400 ,2000)); // lets say here multiple no of arguments are passed or added in the cart by cx
+// here in the o/p we will see the only first no is displayed ans = 200 
+
+// lets solve this problem 
+
+// function calculateCartPrice(...num1){ // in this case u  just used spread operator (here which is called REST OPERATOR) with parameters 
+//     return num1
+// }
+//console.log(calculateCartPrice(200 , 400 ,2000)); // now o/p is in form of arrays [200 , 400 , 2000] later in which u can use loop nd can add them
+
+function calculateCartPrice( val1 , val2 , ...num1){ //  🚨🚨🚨🚨 here now which value will be passed in num 1 is a ttrick question
+    return num1
+}
+//console.log(calculateCartPrice( 200 , 400 , 2000 , 2024)); // here first 200 value go as value 1 , 400 as val2 rest go as num1
+// since we are only returnin num1 therefore O/P is [2000,2024]
+ 
+////////////////////////////////////LETS SEE HOW OBJECTS ARE PASSED IN FUNCTIONS /////////////////////////////////////////////////////////
+
+// const user = {
+//     username: 'sneha' , 
+//     email: 'snehay335@gmail.com'  // 1 object creation hua then passed into function
+// }
+function handleObject(anyObject){
+    return `username is ${anyObject.username} , and an email is ${anyObject.email}`
+}
+//console.log(handleObject(user)); 
+// let directly pass object into function
+
+/*console.log(handleObject({
+    username: "Sneha" , 
+    email: "snehay335@gmail.com"
+}));*/
+
+/////////////////////////Lets see how array is passed into function and that function returns second value of that array
+
+//const arr = [100 , 200 , 300 , 400 ] // can also do without declarin array
+
+function returnSecondValue(getArr){
+    return getArr[1]
+}
+//console.log(returnSecondValue(arr));
+console.log(returnSecondValue([100 , 200 ,300 , 400])); // O/P ---> 200
+
+
