@@ -56,4 +56,4 @@ function userLoggedIn(username = "Sneh"){
     }
     return `${username} just logged in`;
 }
-console.log(userLoggedIn()); // Sneh just logged in
+console.log(userLoggedIn()); // Sneh just logged in 
