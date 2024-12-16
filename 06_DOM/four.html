@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document / Dom</title>
+
+</head>
+<body style = "background-color: black;  color: wheat">
+    
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+
+    <!--now its possible ki we can add so many languages so for so lets create funtion and add using js-->
+
+ </body>
+
+ <script>
+        function addLanguage(langName) {
+            const li = document.createElement("li")
+            li.innerHTML = `${langName}`
+            document.querySelector(".language").appendChild(li)
+        }
+        addLanguage("Python")
+        addLanguage("Typescript") 
+
+        // Ab problem kya h iss approach ka ki isko kuki last m append krna h toh agar bhot sare list elemnts hote toh isko har 
+        // bari pura tree traverse krke last m jana pdta which is not optimised so lets see the optimised version
+
+        function addLangOptimised(langName) {
+            const li = document.createElement("li")
+            li.appendChild(document.createTextNode(langName))                        // OPTIMISED WAY
+            document.querySelector(".language").appendChild(li)
+        }
+        addLangOptimised("Golang")
+
+        /////////////////////////////////////////////////           EDIT   ///////////////////////////////////////////////////
+        // EDIT KRNE S PEHLE VALUE SELECT KRNA PADEGA JISKO EDIT KRNA H
+
+        const secondLang = document.querySelector("li:nth-child(2)")
+        //secondLang.innerHTML = "Mojo"           // again not an optimised way need to traverse the whole tree
+        const newli = document.createElement('li')
+        newli.textContent = "Mojo"
+        secondLang.replaceWith(newli)
+
+        /// EDIT 2 ND EXAMPLE
+
+        const firstLang = document.querySelector("li:first-child")
+        firstLang.outerHTML ="<li>Typescript</li>"
+
+        //REMOVE FIRST EXAMPLE
+        const lastLang = document.querySelector("li:last-child")
+        lastLang.remove()
+
+ </script>
+
+</html>
