@@ -1,0 +1,163 @@
+<!-- javascript ek sequentially run language h toh pure javascript m hum events jese onclick inline m nahi lagayenge vo scalable nahi h  vo hi cheez react m adviceable h-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document - Events</title>
+</head>
+<body style = 'background-color: black;'>
+    <ul id="images">
+        <li>
+        <img src ="http://1.bp.blogspot.com/-IcWLHPBcr20/Tyw5Ix6pzaI/AAAAAAAAAz0/IQLRSdBTNMs/s1600/2-Cute+Dog+1600x1200.jpg" alt = " Dog's Image" id="img1" style="height: 305px; width: 406px; padding-top: 10px;">
+        </li>
+
+        <li>
+            <img src ="http://getwallpapers.com/wallpaper/full/7/6/a/1255753-beautiful-blue-bird-wallpaper-2560x1707.jpg" alt = " Bird's Image" id="img2" style="height: 305px; width: 406px; padding-top: 15px;"><!--onclick="alert('A Beautiful Bird')">But inline events is not scalable in javascript advicable in react also scalable -->  
+        </li>
+
+        <li>
+            <img src ="https://tse3.mm.bing.net/th?id=OIP.k4BefhyaqTMLocqUizhDPwHaE8&pid=Api&P=0&h=220" alt = " Cat's Image" id="img3" style="height: 305px; width: 406px; padding-top: 20px;">
+        </li>
+
+        <li>
+            <a href="https://www.google.com/" id="google" style="color: aqua;">Google</a>
+        </li>
+
+    </ul>
+</body>
+<script>
+    //  document.getElementById('img3').onclick = function() {
+    //      alert("A dog with a cat") // this method also limits the various features also not well for the propagation
+    //  }
+
+    //   document.getElementById('img1').addEventListener('click',function(){
+    //     alert("this is a good way to apply event")
+    //   },false)
+      //ye false jo h vo third parameter hota h or vo bydefault false hi hota h that is y kayi bari dikhta nahi h but htoa h 
+      // pehle k time p jo or method use krte the against eventlistner 
+      // attachEvent(Internet explora k time p use hota tha)
+      // jquery time p .on likh k hojata tha
+
+    //   document.getElementById('img1').addEventListener('click',function(eventObject){
+    //     console.log(eventObject)// isko inspect krke dekhna console m kafi sare properties milenge go through them once
+    //   })
+      // imp ones are -----> type timestamp defaultPrevented
+      // target toElement srcElement currentTarget clientX clientY 
+      // shiftkey screenX screenY altkey ctrlkey  keycode
+
+      // lets talk aboput event propagation that means third parameter which is by default false hence often no t mentioned
+    
+    // event propagation ka 2 context hota h ek event capturing or ek event bubling jo hota h bydefault false bubling = false
+
+   // dekhte h jab bubling(false) h tb kya output aata h or fr baad m capturing(true) h tb ky aata h
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log("clicked in the ul");
+// },false)
+
+        // remember bubling jo h vo chote s bade m jata h 
+        // jiska mtlab jb bakki img p clicke krenege to simple clicked in the ul ayga
+        // lekin jb img 1 p click krknege toh pehle img1 clicked ayga then clicked in the ul
+        // because of the bubling defintion 
+        
+        //output 
+        // img1 clicked
+        // one.html:90 clicked in the ul
+
+// document.getElementById('img1').addEventListener('click',function(e){
+//     console.log(" img1 clicked");
+// },false)
+
+
+//lets seee event capturing means (true) opposite to bubling captures the big one first then small
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log("clicked in the ul");
+// },true)
+
+// document.getElementById('img1').addEventListener('click',function(e){
+//     console.log(" img1 clicked");
+// },true)
+//clicked in the ul
+//one.html:114  img1 clicked     OUTPUT
+
+
+// ab agar humko propagation rokna h toh hum jo parameter m event object lete h as e vo kam m ayga
+// document.getElementById('images').addEventListener('click',function(e){
+//      console.log("clicked in the ul");
+//  },false)
+
+// document.getElementById('img1').addEventListener('click',function(e){
+//     console.log(" img1 clicked");
+//     e.stopPropagation() // upar k event capture n hiinge
+// },false)//output img1 clicked
+
+// prevent default dekh lete h
+
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault()
+//     console.log("Google clicked");
+    
+// },false)
+
+
+
+
+
+// ab hum sikhenge real world example that is ki jese hi image p click krenge images gayab hojane chye
+//document.querySelector('#images').addEventListener('click',function(e){
+    //console.log(e);
+//},false)
+
+// output mtlb har ek img ko select kro toh har ek event pas hora h
+// PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+// one.html:148 PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+// one.html:148 PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//     console.log(e.target);
+// },false)
+// output
+//img har ka target aara h
+//<img src="http://1.bp.blogspot.com/-IcWLHPBcr20/Tyw5Ix6pzaI/AAAAAAAAAz0/IQLRSdBTNMs/s1600/2-Cute+Dog+1600x1200.jpg" alt=" Dog's Image" id="img1" style="height: 305px; width: 406px; padding-top: 10px;">
+
+
+// kuki humko pura li hatana h img hatane k liye n toh bulleted points toh rehjayenge
+// toh hum imgs k parent node ko target krtenge jo h list
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//     console.log(e.target.parentNode);
+// },false)
+//output
+//<li>
+//    <img src="http://1.bp.blogspot.com/-IcWLHPBcr20/Tyw5Ix6pzaI/AAAAAAAAAz0/IQLRSdBTNMs/s1600/2-Cute+Dog+1600x1200.jpg" alt=" Dog's Image" id="img1" style="height: 305px; width: 406px; padding-top: 10px;">
+//        </li>
+
+ // humko smj m ayya ki humko target.parentNode use krna h
+ // abb  usko remove krte h 2 trike s so 1 st way
+
+//  document.querySelector('#images').addEventListener('click',function(e){
+//      console.log(e.target.parentNode);
+//      let removeImg = e.target.parentNode
+//      //removeImg.remove()
+//      removeImg.parentNode.removeChild(removeImg)
+//  },false)
+
+ // lekin isme problem kya hua jesse hi google k pass click kiye toh voh li ka parent node h images
+ // or imageska child nodes h li toh sare hi remove hogaye
+
+ // iss problem ko solve krne k liye humn use krenge event ka tagname
+ 
+ // updated of above code
+ document.querySelector('#images').addEventListener('click',function(e){
+     console.log(e.target.tagName);       // img li mila img or links click krne p
+     if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeImg = e.target.parentNode
+        removeImg.remove()
+     //removeImg.parentNode.removeChild(removeImg)
+     } // toh ab jab tag img h tabhi remove hoga otherwise not
+ },false)
+</script>
+</html>
