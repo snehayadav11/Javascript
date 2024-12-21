@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Project ~ 1</h1>
+    <button id="stop" style="border-radius: 5px;">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Sneha");
+        
+    // },2000)
+
+// alternativly
+
+const sayName = function(){
+    console.log("Sneha")
+}
+setTimeout(sayName,2000) // sayName bas likhe kuki refernce derahe h naki execute krana h n toh aise likhte sayName()
+
+// ab lets change the text of h1 to Learning Javascript
+
+//document.querySelector('h1').innerHTML = "Learning Javascript!"
+
+// Now lets change the text after two second
+
+const newH1 = function(){
+    document.querySelector('h1').innerHTML = "Learning Javascript!"
+}
+
+//setTimeout(newH1,2000)
+
+// now if we want ki given time s pehle if koi 
+//stop button p click krede toh vo na change ho or vesa hi rahe 
+
+// then we use clearTimeout and passs setTimeout reference to cleartime out
+const changeMe = setTimeout(newH1,2000)
+///clearTimeout(changeMe)
+
+// now whats use of applying both set and clear timeout together 
+// lets apply it with a event
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe)
+    console.log("Stopped")
+})
+</script>
+</html>
