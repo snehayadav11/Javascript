@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sneha lets complete Javascript</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    
+    // setInterval(start,1000,Welcome)
+    //setInterval(function(){
+    //    console.log("Sneha",Date.now());
+        
+    // },1000)
+
+    // const sayName = function(){
+    //     console.log("Sneha",Date.now());
+        
+    // }
+    // setInterval(sayName,1000)
+
+    // const start =
+    //     document.querySelector('#start').addEventListener
+    //     ('click',function(){
+    //         console.log("sneha",Date.now());
+            
+    //     })
+    // const stop = setInterval(start,1000)
+    // clearInterval(stop)
+
+
+    // corrected code
+    
+    let intervalId; // Variable to store the interval ID
+
+        // Start button functionality
+        document.querySelector('#start').addEventListener('click', function () {
+            if (!intervalId) { // Only start a new interval if one isn't already running
+                intervalId = setInterval(() => {
+                    console.log("sneha", Date.now());
+                }, 1000);
+            }
+        });
+
+        // Stop button functionality
+        document.querySelector('#stop').addEventListener('click', function () {
+            if (intervalId) {
+                clearInterval(intervalId); // Stop the interval
+                intervalId = null; // Reset the interval ID
+            }
+        });
+
+</script>
+</html>
