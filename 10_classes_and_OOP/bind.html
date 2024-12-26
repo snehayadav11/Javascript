@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bind whichis react lil bit</title>
+</head>
+<body>
+    <button>Button clicked</button>
+</body>
+<script>
+    class react{
+        constructor(){
+            this.library ="react"
+            this.server = 'https://localhost:3000'
+        
+
+        // requirement of this to do is to print spomething when clicked or to hold the reference of that button
+            
+        document.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+
+        }  
+
+
+
+     handleClick(){
+        console.log("button clicked");   // console m ye print hua 
+        console.log(this.server);        // lekin yeh nahi hua jiske karan bind lagaye taki vo reference ko bind kar de
+        
+     }
+
+    }
+
+ const app = new react()
+
+</script>
+</html>
